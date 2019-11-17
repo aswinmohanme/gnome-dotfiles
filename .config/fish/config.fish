@@ -1,7 +1,7 @@
 
 # fnm
-set PATH /home/aswinmohanme/.fnm $PATH
-fnm env --multi | source
+# set PATH /home/aswinmohanme/.fnm $PATH
+# fnm env --multi | source
 
 # source
 bass source ~/.profile
