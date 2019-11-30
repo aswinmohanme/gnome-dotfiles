@@ -55,6 +55,7 @@ This function should only modify configuration layer settings."
      syntax-checking
      racket
      ruby
+     theming
      yaml
 
      (auto-completion :variables
@@ -240,7 +241,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(minimal-light
+   dotspacemacs-themes '(minimal
+                         minimal-light
                          base16-material
                          spacemacs-dark
                          spacemacs-light)
@@ -496,6 +498,14 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (setq theming-modifications
+        `((minimal
+           (helm-source-header :inherit bold-italic)
+           (org-level-1 :height 1.0)
+           (org-level-2 :height 1.0)
+           (org-level-3 :height 1.0)
+           (org-level-4 :height 1.0)
+           (org-level-5 :height 1.0))))
   )
 
 (defun dotspacemacs/user-load ()
