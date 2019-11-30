@@ -51,6 +51,7 @@ This function should only modify configuration layer settings."
      kotlin
      major-modes
      markdown
+     latex
      syntax-checking
      racket
      ruby
@@ -239,7 +240,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(base16-material
+   dotspacemacs-themes '(minimal-light
+                         base16-material
                          spacemacs-dark
                          spacemacs-light)
 
@@ -258,9 +260,9 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Iosevka Term Slab Medium"
+   dotspacemacs-default-font '("Iosevka Term"
                                :size 14
-                               :weight normal
+                               :weight medium
                                :width normal)
 
    ;; The leader key (default "SPC")
@@ -537,6 +539,11 @@ before packages are loaded."
     (setq org-clock-out-when-done t)
     (setq org-todo-keywords '((sequence "TODO" "|" "DONE")))
     (setq org-agenda-files (quote("~/Dropbox/org" "~/Dropbox/org/projects" "~/Dropbox/org/learning"))))
+
+  ;; Add elixir mode format on save
+  (add-hook 'elixir-mode-hook
+            (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
