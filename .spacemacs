@@ -524,6 +524,9 @@ before packages are loaded."
   ;; Set the projectile ascii theme
   (setq neo-theme 'ascii)
 
+  ;; Stop highlighting current line
+  (spacemacs/toggle-highlight-current-line-globally-off)
+
   ;; Spacemacs Line Wrap
   (add-hook 'text-mode-hook 'custom-line-wrap)
   (defun custom-line-wrap ()
