@@ -1,1 +1,4 @@
+
+" NVIM CONFIG FILE
+" EDITING
 syntax off

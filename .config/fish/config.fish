@@ -1,15 +1,10 @@
-
-# fnm
-# set PATH /home/aswinmohanme/.fnm $PATH
-# fnm env --multi | source
-
-# source
+# SOURCE BASH PROFILE
 bass source ~/.profile
 
 # RBENV
 status --is-interactive; and source (rbenv init -|psub)
 
-# Disable Colors in terminal
+# DISABLE TERMINAL COLORS
 functions -e set_color
 function set_color; end
 
